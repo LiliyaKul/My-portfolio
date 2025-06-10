@@ -1,0 +1,48 @@
+a {
+    text-decoration: none;
+}
+
+$primary: rgb(250, 207, 214);
+$secondary: rgb(109, 0, 109);
+
+.el-carousel__container {
+    height: 533px !important;
+}
+
+/* assets/css/global.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__nuxt {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: $primary;
+}
+
+--el-input-focus-border-color {
+  border-color: $secondary !important; /* оранжевый цвет рамки при фокусе */
+}
+
+.el-input {
+  --el-input-focus-border: rgb(109, 0, 109) !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  background-color: rgb(109, 0, 109) !important;
+  border-color: rgb(109, 0, 109) !important;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+  color: rgb(109, 0, 109) !important;
+}
+
+.el-input__wrapper.is-focus {
+    box-shadow: 0 0 0 1px rgb(109, 0, 109) !important;
+}
