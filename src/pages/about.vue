@@ -2,6 +2,7 @@
 
 <template>
     <div class="about">
+        <NuxtLink class="about__button" to="/"><span>На главную</span></NuxtLink>
         <div class="about__title">Информация обо мне</div>
         <div class="about__description">
             <div class="about__description_title">Образование</div>
@@ -26,7 +27,7 @@
             <div class="about__description_title">Английский язык</div>
             <div class="about__description_content">В1 (Intermediate)</div>
             <div class="about__description_title">Опыт работы</div>
-            <div class="about__description_content">У меня пока нет опыта коммерческой разработки, но есть небольшой опыт (несколько месяцев) использования Vue2, Nuxt2, BootstrapVue в проекте https://in-story.club/</div>
+            <div class="about__description_content">Около 3 месяцев в проекте https://in-story.club/</div>
             <div class="about__description_title">Хобби</div>
             <div class="about__description_content">
                 <div>Пешие прогулки</div>
@@ -46,12 +47,26 @@
     flex-direction: column;
     align-items: center;
 
+    &__button{
+        align-self: flex-start;
+        color: $secondary;
+        margin: 10px;
+    }
+
     &__title {
         font-size: 48px;
         font-weight: 600;
         color: $secondary;
         text-align: center;
         padding: 40px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 42px;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 36px;
+        }
     }
 
     &__description {
@@ -63,16 +78,45 @@
         column-gap: 200px;
         row-gap: 20px;
 
+        @media screen and (max-width: 1200px) {
+            max-width: 1100px;
+        }
+
+        @media screen and (max-width: 768px) {
+            max-width: 700px;
+        }
+
+        @media screen and (max-width: 375px) {
+            max-width: 350px;
+            grid-template-columns: 1fr;
+        }
+
         &_title {
             font-size: 28px;
             font-weight: 500;
             color: $secondary;
+
+            @media screen and (max-width: 768px) {
+                font-size: 24px;;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 26px;
+            }
         }
 
         &_content {
             font-size: 20px;
             font-weight: 400;
             color: $secondary;
+
+            @media screen and (max-width: 768px) {
+                font-size: 18px;;
+            }
+
+            @media screen and (max-width: 375px) {
+                margin-bottom: 20px;
+            }
         }
     }
 }

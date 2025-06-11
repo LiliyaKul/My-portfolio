@@ -11,6 +11,7 @@ console.log(items)
 
 <template>
     <div class="contacts">
+        <NuxtLink class="contacts__button" to="/"><span>На главную</span></NuxtLink>
         <div class="contacts__title">Контакты</div>
         <div class="contacts__carousel">
             <el-carousel>
@@ -21,7 +22,7 @@ console.log(items)
                     </div>
                 </el-carousel-item>
             </el-carousel>
-            <div>*Изображения были созданы с помощью нейросети</div>
+            <div class="postscript">*Изображения были созданы с помощью нейросети</div>
         </div>
     </div>
 </template>
@@ -45,6 +46,16 @@ console.log(items)
         font-size: 28px;
         font-weight: 700;
         color: $secondary;
+
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 18px;
+            top: 20px;
+            left: 5%;
+        }
     }
 }
 
@@ -55,16 +66,46 @@ console.log(items)
     flex-direction: column;
     align-items: center;
 
+    &__button{
+        align-self: flex-start;
+        color: $secondary;
+        margin: 10px;
+    }
+
     &__title {
         font-size: 48px;
         font-weight: 600;
         color: $secondary;
         text-align: center;
         padding: 40px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 42px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 36px;
+        }
     }    
 }
 
 .el-carousel {
     width: 1000px;
+
+    @media screen and (max-width: 768px) {
+        width: 700px;
+        height: 350px;
+    }
+
+    @media screen and (max-width: 375px) {
+        width: 370px;
+        height: 200px;
+    }
+}
+
+.postscript {
+    @media screen and (max-width: 375px) {
+        font-size: 12px;
+    }
 }
 </style>

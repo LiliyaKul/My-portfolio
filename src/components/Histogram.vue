@@ -274,6 +274,12 @@ height: 22&#37;;
     min-width: 500px;
 }
 
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
+
 .component-description {
     background-color: white;
     padding: 32px 48px;

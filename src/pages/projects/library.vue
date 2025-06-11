@@ -58,6 +58,10 @@ const filteredComponents = computed(() => {
 
 <template>
     <div class="library">
+        <div class="library__button">
+             <NuxtLink to="/projects"><span class="library__button_item">Назад</span></NuxtLink>
+             <NuxtLink to="/"><span class="library__button_item">На главную</span></NuxtLink>
+        </div>
         <div class="library__title">Библиотека компонентов</div>
         <div class="library__description">
             <div class="library__form">
@@ -101,40 +105,95 @@ const filteredComponents = computed(() => {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // max-width: 1200px;
-    // margin: 0 auto;
+
+    &__button {
+        align-self: flex-start;
+        display: flex;
+        gap: 10px;
+        margin: 10px;
+
+        &_item {
+            color:  $secondary;
+        }
+    }
 
     &__title {
         font-size: 48px;
         font-weight: 600;
         color: $secondary;
         padding: 50px;
+
+        @media screen and (max-width: 768px) {
+            font-size: 42px;
+        }
+
+        @media screen and (max-width: 375px) {
+            font-size: 40px;
+            padding: 30px;
+            text-align: center;
+        }
     }
 
     &__description {
         width: 60%;
+
+        @media screen and (max-width: 1200px) {
+            width: 90%;
+        }
     }
 
     &__content {
         display: flex;
-        // gap: 200px;
+
+        @media screen and (max-width: 375px) {
+            flex-direction: column;
+            gap: 40px;
+        }
 
         &__items {
             display: flex;
             flex-direction: column;
             gap: 20px;
             flex-basis: 50%;
+
+            @media screen and (max-width: 768px) {
+                flex-basis: 30%;
+            }
+
+            @media screen and (max-width: 375px) {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                column-gap: 10px;
+                row-gap: 5px;
+            }
         }
 
         &__item {
             font-size: 24px;
             font-weight: 600;
             color: $secondary;
+
+            @media screen and (max-width: 768px) {
+                font-size: 20px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 16px;
+            }
         }
 
         &__description {
             height: 300px;
             width: 100%;
+
+            @media screen and (max-width: 768px) {
+                width: 75%;
+            }
+
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
         }
     }
 
@@ -142,18 +201,37 @@ const filteredComponents = computed(() => {
         display: flex;
         gap: 40px;
 
+        @media screen and (max-width: 375px) {
+            flex-direction: column;
+            gap:10px;
+        }
+
         &__search {
             width: 30%;
             display: flex;
             margin-bottom: 20px;
             position: relative;
+
+            @media screen and (max-width: 768px) {
+                width: 40%;
+            }
+
+            @media screen and (max-width: 375px) {
+                width: 90%;
+                margin-bottom: 0px;
+            }
         }
+
+        &__radio {
+            @media screen and (max-width: 375px) {
+                margin-bottom: 20px;
+            }
+        }    
     }
 }
 
 .search__icon {
     color: $secondary;
-    z-index: 100;
     position: absolute;
     right: 6px;
     top: 8px;

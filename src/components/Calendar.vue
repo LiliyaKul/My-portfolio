@@ -217,6 +217,12 @@
     max-width: 300px;
 }
 
+@media screen and (max-width: 375px) {
+    .calendar {
+        align-self: center;
+    }
+} 
+
 .calendar__title {
     font-family: Inter;
     font-weight: 600;
@@ -283,6 +289,12 @@
     margin-bottom: 50px;
     min-width: 500px;
 }
+
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
 
 .component-description {
     background-color: white;

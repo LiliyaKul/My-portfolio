@@ -237,6 +237,12 @@ import { Check } from '@element-plus/icons-vue';
     min-width: 500px;
 }
 
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
+
 .component-description {
     background-color: white;
     padding: 32px 48px;

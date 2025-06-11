@@ -100,6 +100,14 @@
     gap: 10px;
 }
 
+@media screen and (max-width: 375px) {
+    .button__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    }   
+} 
+
 .button {
     font-family: Roboto;
     font-size: 16px;
@@ -112,6 +120,12 @@
     font-weight: 500;
     height: 48px;
 }
+@media screen and (max-width: 375px) {
+    .button {
+        padding: 15px 20px 14px 20px;
+    }
+}
+
 button:disabled {
     opacity: 0.5;
     pointer-events: none;
@@ -150,6 +164,12 @@ button:disabled {
     margin-bottom: 50px;
     min-width: 500px;
 }
+
+  @media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+  } 
 
 .component-description {
     background-color: white;

@@ -61,7 +61,7 @@ const toggleRotate = index => {
         &lt;summary class=&quot;accordion__summary&quot;&gt;
             &lt;div class=&quot;accordion__title&quot;&gt;Accordion item 1&lt;/div&gt;
             &lt;svg class=&quot;accordion__icon&quot;&gt;
-                &lt;!-- &lt;use href=&quot;../../assets/images/icons/sprite.svg#frame&quot;&gt; --&gt;
+                &lt;use href=&quot;../../assets/images/icons/sprite.svg#frame&quot;&gt;
             &lt;/svg&gt;
         &lt;/summary&gt;
         &lt;div class=&quot;accordion__text&quot;&gt;
@@ -72,7 +72,7 @@ const toggleRotate = index => {
         &lt;summary class=&quot;accordion__summary&quot;&gt;
             &lt;div class=&quot;accordion__title&quot;&gt;Accordion item 2&lt;/div&gt;
             &lt;svg class=&quot;accordion__icon&quot;&gt;
-                &lt;!-- &lt;use href=&quot;../../assets/images/icons/sprite.svg#frame&quot;&gt; --&gt;
+                &lt;use href=&quot;../../assets/images/icons/sprite.svg#frame&quot;&gt;
             &lt;/svg&gt;                       
         &lt;/summary&gt;
         &lt;div class=&quot;accordion__text&quot;&gt;
@@ -83,7 +83,7 @@ const toggleRotate = index => {
         &lt;summary class=&quot;accordion__summary&quot;&gt;
             &lt;div class=&quot;accordion__title&quot;&gt;Accordion item 3&lt;/div&gt;
             &lt;svg class=&quot;accordion__icon&quot;&gt;
-                &lt;!-- &lt;use href=&quot;../../assets/images/icons/sprite.svg#frame&quot;&gt; --&gt;
+                &lt;use href=&quot;../../assets/images/icons/sprite.svg#frame&quot;&gt;
             &lt;/svg&gt;                      
         &lt;/summary&gt;
         &lt;div class=&quot;accordion__text&quot;&gt;
@@ -203,6 +203,12 @@ const toggleRotate = index => {
     margin-bottom: 50px;
     min-width: 500px;
 }
+
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
 
 .component-description {
     background-color: white;

@@ -15,7 +15,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="input__wrapper">
+    <div class="input-component__wrapper">
          <div class="input">
             <label class="input__label">LABEL</label>
             <div class="input__wrapper">
@@ -218,7 +218,7 @@ onMounted(() => {
 
 <style scoped>
 
-.input__wrapper {
+.input-component__wrapper {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -253,6 +253,14 @@ onMounted(() => {
     padding: 0 24px;  
 }
 
+@media screen and (max-width: 768px) {
+    .input__field {
+        height: 48px;
+        font-weight: 400;
+        font-size: 16px;
+    }
+}
+
 .input__field::placeholder {
     color: #DDE2E5;
 }
@@ -268,6 +276,13 @@ onMounted(() => {
     top: 13px;
     right: 16px;
 } 
+
+@media screen and (max-width: 768px) {
+    .input__icon {
+        top: 9px;
+        right: 18px;
+    } 
+}
 
 .input__icon_success {
     display: none;
@@ -312,6 +327,12 @@ onMounted(() => {
     margin-bottom: 50px;
     min-width: 500px;
 }
+
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
 
 .component-description {
     background-color: white;

@@ -169,6 +169,22 @@ const modalClose = () => {
     transform: translateX(-50%) translateY(-50%);
 }
 
+
+@media screen and (max-width: 375px) {
+    .modal__inner {
+        width: 300px;
+        border-radius: 8px;
+        background: white; 
+        padding: 30px 40px;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+} 
+
 .modal__close {
     width: 16px;
     height: 16px;
@@ -202,6 +218,12 @@ const modalClose = () => {
     margin-bottom: 50px;
     min-width: 500px;
 }
+
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
 
 .component-description {
     background-color: white;

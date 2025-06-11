@@ -100,6 +100,17 @@ import { QuestionFilled } from '@element-plus/icons-vue';
     margin-top: 50px;
 }
 
+@media screen and (max-width: 375px) {
+    .tooltip {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+}
+
 .tooltip__bubble {
     display: none;
     width: 129px;
@@ -151,6 +162,12 @@ import { QuestionFilled } from '@element-plus/icons-vue';
     margin-bottom: 50px;
     min-width: 500px;
 }
+
+@media screen and (max-width: 375px) {
+      .component-description__code {
+        min-width: 340px;
+    }
+} 
 
 .component-description {
     background-color: white;

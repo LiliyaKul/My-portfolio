@@ -19,8 +19,11 @@
 
 .main {
     display: flex;
-    flex-grow: 1;
     height: 100vh;
+
+    @media screen and (max-width: 375px) {
+        flex-direction: column;
+    }
 
     &__name {
         background-color: $primary;
@@ -31,10 +34,22 @@
         justify-content: center;
         align-items: center;
 
+        @media screen and (max-width: 375px) {
+            flex-basis: 50%;
+        }
+
         &__title {
             font-size: 50px;
             font-weight: 600;
             color: $secondary;
+
+            @media screen and (max-width: 768px) {
+                font-size: 42px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 42px;
+            }
         }
 
         &__description {
@@ -42,6 +57,14 @@
             font-weight: 400;
             font-style: italic;
             color: $secondary;
+
+            @media screen and (max-width: 768px) {
+                font-size: 30px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 30px;
+            }
         }
     }
 
@@ -53,11 +76,26 @@
         justify-content: center;
         align-items: flex-start;
 
+        @media screen and (max-width: 375px) {
+            flex-basis: 50%;
+            align-items: center;
+            // justify-content: flex-start;
+        }
+
         &__item {
             font-size: 28px;
             font-weight: 300;
             color: $primary;
             margin: 20px 40px;
+
+            @media screen and (max-width: 768px) {
+                font-size: 24px;
+            }
+
+            @media screen and (max-width: 375px) {
+                font-size: 24px;
+                margin: 20px 20px;
+            }
         }
     }
 }
