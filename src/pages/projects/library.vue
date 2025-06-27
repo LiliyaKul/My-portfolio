@@ -147,7 +147,8 @@ const filteredComponents = computed(() => {
 
         @media screen and (max-width: 375px) {
             flex-direction: column;
-            gap: 40px;
+            gap: 20px;
+            margin-bottom: 20px;
         }
 
         &__items {

@@ -6,6 +6,8 @@
         <div class="projects__title">Мои проекты</div>
         <NuxtLink to="/projects/library"><div class="projects__description">Библиотека компонентов на HTML и CSS</div></NuxtLink>
         <div class="projects__description">Учебный проект: сайт на JavaScript</div>
+        <NuxtLink to="/projects/weather"><div class="projects__description">Прогноз погоды на сегодня</div></NuxtLink>
+        <NuxtLink to="/projects/toDoList"><div class="projects__description">Список дел и задач</div></NuxtLink>
     </div>
 </template>
 

@@ -3,8 +3,8 @@
 <template>
     <div class="main">
         <div class="main__name">
-            <div class="main__name__title">Кулишова Лилия</div>
-            <div class="main__name__description">Frontend-разработчик</div>
+            <div class="main__name__title">Всем привет! Меня зовут Лилия.</div>
+            <div class="main__name__description">Я начинающий frontend-разработчик. Здесь хочу представить вам свое портфолио</div>
         </div>
         <div class="main__nav">
             <NuxtLink to="/about"><div class="main__nav__item">Обо мне</div></NuxtLink>
@@ -34,8 +34,9 @@
         justify-content: center;
         align-items: center;
 
-        @media screen and (max-width: 375px) {
-            flex-basis: 50%;
+        @media screen and (max-width: 1200px) {
+            text-align: center;
+            padding: 20px;
         }
 
         &__title {
@@ -57,6 +58,7 @@
             font-weight: 400;
             font-style: italic;
             color: $secondary;
+            text-align: center;
 
             @media screen and (max-width: 768px) {
                 font-size: 30px;
