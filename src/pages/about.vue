@@ -27,7 +27,7 @@
             <div class="about__description_title">Английский язык</div>
             <div class="about__description_content">В1 (Intermediate)</div>
             <div class="about__description_title">Опыт работы</div>
-            <div class="about__description_content">Около 3 месяцев в проекте https://in-story.club/</div>
+            <div class="about__description_content">С марта 2025г. в проекте https://in-story.club/</div>
             <div class="about__description_title">Хобби</div>
             <div class="about__description_content">
                 <div>Пешие прогулки</div>

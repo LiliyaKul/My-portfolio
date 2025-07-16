@@ -3,11 +3,11 @@ import { VueDraggableNext } from 'vue-draggable-next'
 import { ElIcon } from 'element-plus'
 import { Plus } from '@element-plus/icons-vue'; 
 import { Close } from '@element-plus/icons-vue'; 
+import { Flag } from '@element-plus/icons-vue'; 
 
 const list = ref([]);
 const task = ref(false);
 const taskForm = ref('');
-
 
 function addForm() {
     task.value = true;
@@ -19,28 +19,25 @@ function deleteForm() {
 }
 
 function addTask() {
-    list.value.push(taskForm.value);
+    list.value.push({text: taskForm.value, check: false, important: false});
     task.value = false;
 }
 
-function deleteTask() {
-    list.value.pop('')
+function deleteTask(index) {
+    list.value.splice(index, 1);
 }
 
-const onChange = event => {
-  console.log('List change:', event);
-};
-// const onDragStart = (ev, itemIndex) => {
-//   ev.dataTransfer.setData('itemIndex', itemIndex);
-// };
+function deleteCheckedTask() {
+    list.value = list.value.filter(item => item.check !== true);
+}
 
-// // Обработчик события завершения перетаскивания
-// const onDrop = (ev) => {
-//   const index = parseInt(ev.dataTransfer.getData('itemIndex'));
-//   // Перемещаем элемент внутри массива
-//   const removedItem = list.value.splice(index, 1)[0];
-//   list.value.push(removedItem); // Или делаем insert куда-то ещё
-// };
+function makeImportant(index) {
+    list.value[index].important = !list.value[index].important;
+}
+
+function changeImportantUp() {
+    list.value = list.value.sort((a,b) => b.important - a.important);
+}
 </script>
 
 <template>
@@ -52,25 +49,28 @@ const onChange = event => {
         <div class="to-do-list__title">Список дел и задач</div>
         <div class="to-do-list__description">
             <div class="list__nav">
-                <div class="list__nav-item" @click="addForm">+ Добавить задачу</div>
-                <div class="list__nav-item" @click="deleteTask">- Удалить задачу</div>
+                <div class="list__nav-item" @click="addForm">Добавить задачу</div>
+                <div class="list__nav-item" @click="deleteTask">Удалить последнюю задачу</div>
+                <div class="list__nav-item" @click="deleteCheckedTask">Удалить все выполненные задачи</div>
+                <div class="list__nav-item" @click="changeImportantUp">Переместить важные задачи наверх</div>
             </div>
             <div class="list__content container">
-            <!-- <div class="list__content container" @drop.prevent="onDrop($event)" @dragover.prevent> -->
                 <div class="list__form" v-if="task">
                     <el-input v-model="taskForm" placeholder="Введите задачу" @keyup.enter="addTask"></el-input>
                     <el-icon class="list__form_icon-plus" @click="addTask"><Plus /></el-icon>
                     <el-icon class="list__form_icon-close" @click="deleteForm"><Close /></el-icon>
                 </div>
-                <!-- <div v-for="(item, idx) in list" :key="idx" 
-                    draggable="true" 
-                    @dragstart="onDragStart($event, idx)"
-                    class="draggable-item list__content-item">{{ item }}</div> -->
-                <!-- <VueDraggableNext tag="ul" list="list" handle=".handle"> -->
-                    <draggable @change="onChange">
-                        <div class="list__content-item handle" v-for="item in list" :key="item.id">{{ item }}</div>
-                    </draggable>
-                <!-- </VueDraggableNext> -->
+                <VueDraggableNext>
+                    <div class="list__content-item handle" v-for="(item, index) in list" :key="item.id">
+                        <el-tooltip effect="light" content="Отметить как выполненное" placement="top">
+                            <el-checkbox v-model="item.check"></el-checkbox>
+                        </el-tooltip>
+                        {{ item.text }}
+                        <el-tooltip effect="light" content="Отметить как приоритетное" placement="top">
+                            <el-icon class="flag-not-important" :class="{'flag-important': item.important}" @click="makeImportant(index)"><Flag /></el-icon>
+                        </el-tooltip>
+                    </div>
+                </VueDraggableNext>
             </div>
         </div>
     </div>
@@ -78,6 +78,15 @@ const onChange = event => {
 
 <style lang="scss" scoped>
 @import "~/assets/scss/main.scss";
+
+
+.flag-not-important {
+    color: $primary;
+}
+
+.flag-important {
+    color: $secondary;
+}
 
 .to-do-list {
     background-color: $primary;
@@ -141,6 +150,8 @@ const onChange = event => {
             color: $secondary;
             font-size: 24px;
             cursor: pointer;
+            position:  relative;
+            margin-bottom: 30px;
         }
     }
 
