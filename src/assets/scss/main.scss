@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Clear Sans";
+  src: url("../fonts/ClearSans-Medium.ttf") format("truetype");
+}
+
 a {
     text-decoration: none;
 }
@@ -9,7 +14,6 @@ $secondary: rgb(109, 0, 109);
     height: 533px !important;
 }
 
-/* assets/css/global.css */
 *,
 *::before,
 *::after {
@@ -24,10 +28,11 @@ body,
   padding: 0;
   overflow-x: hidden;
   background-color: $primary;
+  font-family: Clear Sans;
 }
 
 --el-input-focus-border-color {
-  border-color: $secondary !important; /* оранжевый цвет рамки при фокусе */
+  border-color: $secondary !important;
 }
 
 .el-input {
@@ -64,11 +69,6 @@ body,
   border-right-width: 2px !important;
   border-bottom-width: 2px !important;
 }
-
-// .el-tooltip__popper.is-light {
-//   background-color: #e038e3 !important; /* белый фон */
-//   color: black !important; /* черный текст */
-// }
 
 pre {
     white-space: pre-wrap;
